@@ -2,7 +2,7 @@
 
 set -e
 
-python3 translate.py
+python3 ./scripts/translate.py
 
 chromium-browser --headless \
   --print-to-pdf="./ru.pdf" \
