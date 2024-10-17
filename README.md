@@ -7,3 +7,5 @@ GitHub Pages.
 ```
 ./scripts/deploy.sh <commit message>
 ```
+
+Check on https://alexesdev.github.io/resume/.
