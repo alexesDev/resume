@@ -1,0 +1,10 @@
+#!/bin/sh
+
+set -e
+
+echo "Preparing to push..."
+
+./prepare.sh
+
+git add en.html en.pdf ru.pdf
+git commit -m "feat: translate to english, make pdfs" || true
