@@ -1,0 +1,307 @@
+<!DOCTYPE html>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Алексей Юрченко - Fullstack Senior Developer</title>
+<link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+
+<style type="text/css">
+  * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+
+  body {
+    font-family: 'Roboto', sans-serif;
+    background-color: #f9f9f9;
+    color: #292929;
+    line-height: 1.6;
+  }
+
+  .container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px 40px;
+    background-color: #fff;
+  }
+
+  header {
+    margin-bottom: 30px;
+  }
+
+  header h1 {
+    font-size: 2.5em;
+    color: #2C3E50;
+  }
+
+  header h2 {
+    font-size: 1.5em;
+    color: #444;
+  }
+
+  .contact p {
+    margin: 10px 0;
+  }
+
+  section {
+    margin-bottom: 30px;
+  }
+
+  section h3 {
+    font-size: 1.8em;
+    color: #2C3E50;
+    margin-bottom: 10px;
+    border-bottom: 2px solid #2C3E50;
+    text-transform: uppercase;
+  }
+
+  section p, section ul {
+    margin-left: 20px;
+  }
+
+  ul {
+    list-style-type: disc;
+  }
+
+  .job, .project {
+    margin-bottom: 20px;
+  }
+
+  .job h4, .project h4 {
+    font-size: 1.4em;
+    color: #292929;
+    margin-bottom: 5px;
+  }
+
+  .job p, .project p {
+    margin-left: 20px;
+    font-size: 1em;
+    color: #444;
+  }
+
+  .head {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  .photo {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    overflow: hidden;
+  }
+
+  .photo img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+
+  .content {
+    display: flex;
+  }
+
+  .main-info {
+    flex: 1;
+    margin-right: 40px;
+  }
+
+  .side-info {
+    width: 300px;
+  }
+
+  @media (max-width: 768px) {
+    .content {
+      flex-direction: column;
+    }
+
+    .main-info {
+      margin-right: 0;
+    }
+
+    .side-info {
+      display: flex;
+      flex-wrap: wrap;
+      width: 100%;
+    }
+
+    .side-info section {
+      width: 300px;
+    }
+  }
+
+  .job ul {
+    margin-top: 10px;
+  }
+
+  .job li {
+    margin-left: 30px;
+  }
+
+  dl {
+    margin: 10px 0;
+  }
+
+  dt {
+    font-weight: bold;
+  }
+
+  dd {
+    margin-left: 20px;
+  }
+
+  @media print {
+    body {
+      font-size: 12px;
+    }
+
+    .side-info {
+      display: block;
+      width: 100%;
+    }
+  }
+
+  .langs {
+    text-align: right;
+    margin-bottom: 20px;
+  }
+</style>
+
+<div class="container">
+  <div class="head">
+    <header>
+      <h1>Алексей Юрченко</h1>
+      <div class="contact">
+        <p>Email: <a href="mailto:alexes.dev@gmail.com">alexes.dev@gmail.com</a></p>
+        <p>GitHub: <a href="https://github.com/alexesdev">github.com/alexesdev</a></p>
+        <p>Где сейчас: Тайланд</p>
+      </div>
+    </header>
+    <div>
+      <div class="langs">
+        <a href="/resume">RU</a> | <a href="/resume/en.html">EN</a>
+      </div>
+      <div class="photo">
+        <img src="./avatar.jpg" alt="Алексей Юрченко" />
+      </div>
+    </div>
+  </div>
+
+  <section>
+    <h3>Обо мне</h3>
+    <p>
+      Fullstack Senior Developer с более чем 10-летним опытом работы в разработке.
+      Начал писать код еще со школы, специализируюсь на создании масштабируемых решений, глубоко вникаю в бизнес-задачи.
+      Придерживаюсь принципа "<a href="https://en.wikipedia.org/wiki/Eating_your_own_dog_food">Eating your own dog food</a>", что помогает мне создавать практичные и надежные продукты.
+      Перфекционист по натуре, но умею находить баланс между качеством и сроками. Способен работать в интенсивном режиме,
+      однако уделяю внимание предотвращению выгорания. Более 10 лет использую Linux и предпочитаю работать в VIM.
+      Тип личности по <a href="https://www.16personalities.com/">MBTI</a> — INTP.
+    </p>
+  </section>
+
+  <div class="content">
+    <div class="main-info">
+      <section>
+        <h3>Опыт работы</h3>
+
+        <div class="job">
+          <h4>Бекенд разработчик - P2P Validator</h4>
+          <p>08/2022 - 01/2024 | Удаленно</p>
+          <p>P2P.org занимается Инфраструктурой и сбором данных для PoS блокчейн сетей.</p>
+          <ul>
+            <li>Разработка инструментов для дата аналитиков (экстраторы cosmossdk-based сетей, api, etc)</li>
+          </ul>
+        </div>
+
+        <div class="job">
+          <h4>Руководитель IT отдела - ФРЭШ</h4>
+          <p>07/2018 - 04/2022 | Москва</p>
+          <p>Интернет-магазин продуктов питания.</p>
+          <ul>
+            <li>Управление командой из 10 человек. Бекендеры, фронты, ПМ, дизайнер</li>
+            <li>Решение сложных кейсов, DevOps, найм и развитие сотрудников</li>
+            <li>Внедрение бизнес-аналитики на базе Metabase</li>
+          </ul>
+        </div>
+
+        <div class="job">
+          <h4>Фуллстак разработчик - Statsbot.co</h4>
+          <p>12/2017 - 04/2018 | Москва</p>
+          <p>SaaS стартап аналитики данных. Нынешний cube.js.</p>
+          <ul>
+            <li>Поддержка и добавление нового функционала на Rails/React</li>
+          </ul>
+        </div>
+
+        <div class="job">
+          <h4>Фуллстак разработчик - ФРЭШ</h4>
+          <p>01/2014 - 12/2017 | Москва</p>
+          <p>Интернет-магазин продуктов питания.</p>
+          <ul>
+            <li>Доработка сайта/CRM до рабочего состояния после другого человека</li>
+            <li>Мобильный сайт на React</li>
+            <li>Доработка мобильного iOS приложения (Object-C)</li>
+            <li>Разработка приложения на React Native</li>
+          </ul>
+        </div>
+
+        <div class="job">
+          <h4>Бекенд разработчик - Фриланс</h4>
+          <p>06/2000 - 01/2014 | Севастополь</p>
+          <ul>
+            <li>Верстка HTML/jQuery</li>
+            <li>Разработка сайтов на PHP (Yii)</li>
+            <li>Ruby on Rails</li>
+          </ul>
+        </div>
+      </section>
+    </div>
+    <div class="side-info">
+      <section>
+        <h3>Навыки</h3>
+        <ul>
+          <li>React, React Native</li>
+          <li>Ruby, Ruby on Rails</li>
+          <li>Typescript, Node.js</li>
+          <li>PostgreSQL, BigQuery</li>
+          <li>Docker, Kubernetes, Ansible, Nomad</li>
+          <li>Google Cloud, Yandex Cloud</li>
+        </ul>
+      </section>
+
+      <section>
+        <h3>Хобби</h3>
+        <dl>
+          <dt>Электроника</dt>
+          <dd>Спроектировать, заказать и собрать несложное устройство на популярных микроконтроллерах.</dd>
+        </dl>
+
+        <dl>
+          <dt>Гидропоника</dt>
+          <dd>Выращивание растений без почвы с автоматизацией, очень похоже на DevOps.</dd>
+        </dl>
+
+        <dl>
+          <dt>GameDev</dt>
+          <dd>Unity, Godot, VR.</dd>
+        </dl>
+
+        <dl>
+          <dt>Zettelkasten/Второй мозг</dt>
+          <dd>Постоянно веду заметки про новые знания, мысли и связи между ними.</dd>
+        </dl>
+      </section>
+
+      <section>
+        <h3>Языки</h3>
+        <ul>
+          <li>Русский - Родной</li>
+          <li>Украинский - Родной</li>
+          <li>English - B2</li>
+        </ul>
+      </section>
+    </div>
+  </div>
+</div>
