@@ -8,4 +8,4 @@ GitHub Pages.
 ./scripts/deploy.sh <commit message>
 ```
 
-Check on https://alexesdev.github.io/resume/.
+Check [here](https://alexesdev.github.io/resume/en.html).
