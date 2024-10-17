@@ -157,20 +157,47 @@
     margin-left: 20px;
   }
 
-  @media print {
+  /*@media print {*/
     body {
       font-size: 12px;
     }
 
-    .side-info {
+    .container {
+      padding: 0;
+    }
+
+    .job, dl {
+      page-break-inside: avoid;
+    }
+
+    .content {
       display: block;
+    }
+
+    .main-info {
+      margin-bottom: 40px;
+    }
+
+    .side-info {
+      display: flex;
+      justify-content: space-between;
       width: 100%;
     }
-  }
+
+    .langs {
+      display: none;
+    }
+  /*}*/
 
   .langs {
     text-align: right;
     margin-bottom: 20px;
+  }
+
+  .hint {
+    font-size: 0.75em;
+    color: #777;
+    margin-top: 20px;
   }
 </style>
 
@@ -201,7 +228,7 @@
       Начал писать код еще со школы, специализируюсь на создании масштабируемых решений, глубоко вникаю в бизнес-задачи.
       Придерживаюсь принципа "<a href="https://en.wikipedia.org/wiki/Eating_your_own_dog_food">Eating your own dog food</a>", что помогает мне создавать практичные и надежные продукты.
       Перфекционист по натуре, но умею находить баланс между качеством и сроками. Способен работать в интенсивном режиме,
-      однако уделяю внимание предотвращению выгорания. Более 10 лет использую Linux и предпочитаю работать в VIM.
+      однако уделяю внимание предотвращению выгорания. Более 10 лет использую Linux и предпочитаю работать в терминале и VIM.
       Тип личности по <a href="https://www.16personalities.com/">MBTI</a> — INTP-A.
     </p>
   </section>
@@ -216,7 +243,9 @@
           <p>08/2022 - 01/2024 | Удаленно</p>
           <p>P2P.org занимается Инфраструктурой и сбором данных для PoS блокчейн сетей.</p>
           <ul>
-            <li>Разработка инструментов для дата аналитиков (экстраторы cosmossdk-based сетей, api, etc)</li>
+            <li>Разработка инструментов для дата аналитиков (экстракторы cosmossdk-based сетей, api, etc) на Golang и Python.</li>
+            <li>Кастомные дашборды на React/Typescript</li>
+            <li>Загрузка терабайтов данных в BigQuery</li>
           </ul>
         </div>
 
@@ -226,8 +255,17 @@
           <p>Интернет-магазин продуктов питания.</p>
           <ul>
             <li>Управление командой из 10 человек. Бекендеры, фронты, ПМ, дизайнер</li>
-            <li>Решение сложных кейсов, DevOps, найм и развитие сотрудников</li>
+            <li>Решение сложных кейсов, найм и развитие сотрудников</li>
             <li>Внедрение бизнес-аналитики на базе Metabase</li>
+            <li>GraphQL API на Golang и <a href="https://gqlgen.com/">gqlgen</a></li>
+            <li>Несколько фронтов интернет-магазина на Gatsby (React, Typescript)</li>
+            <li>Несколько мобильных приложений на React Native (Typescript)</li>
+            <li>Своя система управления складом (остатки, поставки, отгрузка)</li>
+            <li>Интерфейсы почти для всех отделов компании: логистов, водителей, упаковщиков, сборщиков, поваров</li>
+            <li>Интеграция складской с системы с кассами и весами (выгрузка бинарных данных данных через сеть)</li>
+            <li>Управление кластером из 30+ виртуальных машин на Nomad в Yandex Cloud (nomad, consul, packer, ansible)</li>
+            <li>Мониторинг и алертинг Prometheus/Grafana/AlertManager</li>
+            <li>Поддержка своего Gitlab и CI/CD для всех проектов</li>
           </ul>
         </div>
 
@@ -264,49 +302,72 @@
       </section>
     </div>
     <div class="side-info">
-      <section>
-        <h3>Навыки</h3>
-        <ul>
-          <li>Golang</li>
-          <li>React, React Native</li>
-          <li>Ruby, Ruby on Rails</li>
-          <li>Typescript, Node.js</li>
-          <li>PostgreSQL, BigQuery</li>
-          <li>Docker, Kubernetes, Ansible, Nomad</li>
-          <li>Google Cloud, Yandex Cloud</li>
-        </ul>
-      </section>
+      <div>
+        <section>
+          <h3>Навыки</h3>
+          <ul>
+            <li>Golang*</li>
+            <li>React*, React Native*</li>
+            <li>Ruby*, Ruby on Rails*</li>
+            <li>Typescript, Node.js*</li>
+            <li>PostgreSQL*, BigQuery</li>
+            <li>Docker*, Kubernetes, Ansible, Nomad</li>
+            <li>Google Cloud, Yandex Cloud</li>
+          </ul>
+          <p class="hint">* - Уверенное владение с 5+ годами коммерческого опыта</p>
+        </section>
+
+        <section>
+          <h3>Языки</h3>
+          <ul>
+            <li>Русский - Родной</li>
+            <li>Украинский - Родной</li>
+            <li>English - B2</li>
+          </ul>
+        </section>
+      </div>
 
       <section>
         <h3>Хобби</h3>
         <dl>
           <dt>Электроника</dt>
-          <dd>Спроектировать, заказать и собрать несложное устройство на популярных микроконтроллерах.</dd>
+          <dd>
+            Спроектировать, заказать и собрать несложное устройство на популярных микроконтроллерах.
+            Полезные навыки: C++.
+          </dd>
+        </dl>
+
+        <dl>
+          <dt>3D-печать</dt>
+          <dd>
+            Спроектировать детали/устройство в CAD и распечатать его.
+            Полезные навыки: Владение CAD, опыт с ЧПУ станками.
+          </dd>
         </dl>
 
         <dl>
           <dt>Гидропоника</dt>
-          <dd>Выращивание растений без почвы с автоматизацией, очень похоже на DevOps.</dd>
+          <dd>
+            Выращивание растений без почвы с автоматизацией.
+            Полезные навыки: мониторинг питания и окружения на Prometheus/Grafana.
+          </dd>
         </dl>
 
         <dl>
           <dt>GameDev</dt>
-          <dd>Unity, Godot, VR.</dd>
+          <dd>
+            Unity, Godot, VR.
+            Полезные навыки: C#, C++.
+          </dd>
         </dl>
 
         <dl>
           <dt>Zettelkasten/Второй мозг</dt>
-          <dd>Постоянно веду заметки про новые знания, мысли и связи между ними.</dd>
+          <dd>
+            Постоянно веду заметки про новые знания, мысли и связи между ними.
+            Полезные навыки: ведение документации, опыт работы с базами знаний в системах типа Notion.
+          </dd>
         </dl>
-      </section>
-
-      <section>
-        <h3>Языки</h3>
-        <ul>
-          <li>Русский - Родной</li>
-          <li>Украинский - Родной</li>
-          <li>English - B2</li>
-        </ul>
       </section>
     </div>
   </div>
