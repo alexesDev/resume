@@ -32,6 +32,7 @@ Do not add any new information.
 Do not remove any existing information.
 Return only final resume content.
 Save the original html markup.
+Change /resume/ru.pdf to /resume/en.pdf.
 
 {source_file_countent}
 """
