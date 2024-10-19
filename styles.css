@@ -49,6 +49,7 @@ section h3 {
 }
 
 section p, section ul {
+  margin: 10px 0;
   margin-left: 20px;
 }
 
