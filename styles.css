@@ -174,13 +174,14 @@ dd {
 @media print {
   body {
     font-size: 12px;
+    background: none;
   }
 
   .container {
     padding: 0;
   }
 
-  .job, dl {
+  .side-info, dl {
     page-break-inside: avoid;
   }
 
