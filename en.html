@@ -2,11 +2,11 @@
 
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Алексей Юрченко - Fullstack Senior Developer</title>
+<title>Alexey Yurchenko — AI Engineer / Senior Backend Engineer</title>
 <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
 
-<meta property="og:title" content="Резюме. Юрченко Алексей">
-<meta property="og:description" content="Fullstack Senior Developer. Golang, Typescript">
+<meta property="og:title" content="Resume. Alexey Yurchenko">
+<meta property="og:description" content="AI Engineer / Senior Backend Engineer. Python, Go, MCP, AI agents.">
 <meta property="og:url" content="https://alexesdev.github.io/resume/">
 <meta property="og:type" content="website">
 
@@ -16,11 +16,11 @@
   <div class="head">
     <header>
       <h1>Alexey Yurchenko</h1>
-      Age: 31
+      <h2>AI Engineer / Senior Backend Engineer</h2>
       <div class="contact">
         <p>Email: <a href="mailto:alexes.dev@gmail.com">alexes.dev@gmail.com</a></p>
         <p>GitHub: <a href="https://github.com/alexesdev">github.com/alexesdev</a></p>
-        <p>Current Location: Thailand</p>
+        <p>Remote / Digital nomad</p>
       </div>
     </header>
     <div>
@@ -33,19 +33,71 @@
   <section>
     <h3>About Me</h3>
     <p>
-      Fullstack Senior Developer with over 10 years of experience in development. Main focuses are E-commerce, Crypto.
-      Started coding in school, specializing in creating scalable solutions, and delving deeply into business tasks.
-      Adhere to the principle of "<a href="https://en.wikipedia.org/wiki/Eating_your_own_dog_food">Eating your own dog food</a>", which helps me create practical and reliable products.
-      A perfectionist by nature, but able to find a balance between quality and deadlines. Capable of working under tight deadlines.
-      Quickly understand new code, even in unfamiliar languages, as exploring the internals of libraries is one of my hobbies.
-      Utilize AI in everyday work (GPT-4, Copilot).
+      I'm looking for an <b>AI Agent Developer</b> role. Most of the code I write these days isn't
+      for humans. It's for agents, and the agents are the ones working with humans. The long-term
+      goal is to run evolutionary selection inside swarms of agents. I'm not there yet — I'm
+      building the tools first.
     </p>
     <p>
-      For most of my career, I worked with vague requirements and without a clear vision of the final result,
-      which taught me flexibility and the ability to make decisions in conditions of uncertainty. However, at this stage,
-      I want to work with clearly defined tasks and goals to use my skills and experience most effectively.
+      15 years of practice as a developer, since 2011, without a week away from code. Right now I run
+      <a href="https://iiminion.ru">iiminion.ru</a>, where I package autonomous AI agents and sell
+      them by subscription: an agent that watches competitors and writes posts in a brand voice,
+      a script-to-video pipeline, a landing-page generator that survives client edits, plus
+      per-customer fine-tuning. The infrastructure underneath it is mine — an agent-orchestration
+      platform (Hermes on a Nomad cluster, agents coordinating through shared memory) and an
+      open-source MCP knowledge protocol called <a href="https://trip2g.com">trip2g.com</a>.
     </p>
-    <p>Primarily consider positions with cryptocurrency payment.</p>
+    <p>
+      Python and Go are my main languages. Most of my career has been about taking unclear specs
+      and turning them into systems that actually run. I've gotten good at working without a plan
+      when there isn't one.
+    </p>
+  </section>
+
+  <section>
+    <h3>Featured Projects</h3>
+
+    <div class="project">
+      <h4>AI Agent Orchestration Platform — Independent R&amp;D</h4>
+      <p>2025 — Present</p>
+      <p>Infrastructure for autonomous AI agents that operate on a shared, transparent knowledge substrate.</p>
+      <ul>
+        <li>Built a control panel for deploying Hermes agents into a Nomad cluster — one-click rollout, lifecycle management, fleet-level observability.</li>
+        <li>Packaged the agent so it maintains its own Obsidian vault as a "second brain" — every action is recorded with its rationale (what was done, how, why), giving the agent transparent, human-readable memory and full auditability.</li>
+        <li>Multi-agent coordination through shared memory: agents read each other's vaults to align on context, hand off tasks, and avoid duplicate work — a lightweight alternative to heavy orchestration frameworks.</li>
+        <li>Designed to interoperate with trip2g.com so agent vaults are indexable and queryable across the same federated MCP protocol.</li>
+      </ul>
+    </div>
+
+    <div class="project">
+      <h4><a href="https://trip2g.com">trip2g.com</a> — Founder, Sole Engineer (open source, MIT)</h4>
+      <p>2025 — Present</p>
+      <p>
+        A federated protocol that turns markdown note collections (Obsidian, Notion, Google Drive,
+        Telegram) into RAG sources for AI agents over Model Context Protocol. About 12 months of
+        solo work from the first prototype to a public hub where other people now plug in their own
+        bases.
+      </p>
+      <p>
+        It didn't start as an AI project. I'd been keeping an Obsidian vault for three years and
+        wanted a way to share parts of it. Writing long posts is hard; writing 5–10 short
+        interlinked notes is much easier. The original plan was a knowledge-graph engine where you
+        could carve out a subgraph and sell it. I knew AI should fit in somewhere but couldn't see
+        how. Once I tried MCP, the picture clicked: the base becomes a private external RAG, the
+        sensitive data stays on the user's machine, and the agent — not the human — is the natural
+        consumer. Everything below (federation, the vector router, the self-describing bases) is
+        what I had to build to make that workable. The same realization is what spun off iiminion.ru.
+      </p>
+      <ul>
+        <li><b>Markdown-first knowledge engine</b> — ingests markdown, renders each note as a page, exposes the corpus as a typed knowledge graph; arbitrary schemas and monetizable subgraphs can be built on top.</li>
+        <li><b>MCP server as external RAG</b> — keeps sensitive data local; the agent issues targeted queries instead of shipping the full corpus to a third-party service.</li>
+        <li><b>Self-describing bases</b> — each base ships its own search instructions, letting the calling agent <i>plan its retrieval</i> rather than rely on a fixed retriever.</li>
+        <li><b>Vector "router" base</b> — a meta-base over other bases: semantic search routes a query to the right downstream sources, then the agent fans out across the matches.</li>
+        <li><b>Protocol-level federation with adapters</b> for Notion, Google Drive, Telegram, etc. — direct hub-to-hub peer-to-peer, no central relay.</li>
+        <li><b>Recent features:</b> per-heading note retrieval and TOC over MCP; admin-mode API key (the agent can manage the system itself); BEM templating that makes agent-driven landing-page edits structurally stable.</li>
+        <li>External users are building their own subgraphs and case-study bases on the protocol.</li>
+      </ul>
+    </div>
   </section>
 
   <div class="content">
@@ -54,69 +106,80 @@
         <h3>Work Experience</h3>
 
         <div class="job">
-          <h4>Backend Developer - P2P Validator</h4>
-          <p>08/2022 - 01/2024 | Remote</p>
-          <p>P2P.org is engaged in infrastructure and data collection for PoS blockchain networks.</p>
+          <h4>Founder &amp; AI Engineer — <a href="https://iiminion.ru">iiminion.ru</a></h4>
+          <p>2026 — Present | Remote</p>
+          <p>Productizing autonomous AI agents on a subscription basis; agents are packaged for self-serve use and fine-tuned per customer to match their workflow.</p>
           <ul>
-            <li>Development of tools for data analysts (extractors for cosmossdk-based networks, api, etc.) in Golang and Python.</li>
-            <li>Custom dashboards in React/Typescript</li>
-            <li>Loading terabytes of data into BigQuery</li>
+            <li><b>Competitor-monitoring agent:</b> tracks competitors and produces branded social posts and content for the customer's product in their voice — research, drafting, and publishing.</li>
+            <li><b>Script-to-video pipeline:</b> end-to-end automated short-form video generation from a written script.</li>
+            <li><b>Edit-stable landing-page generator:</b> produces marketing landing pages that survive iterative client edits without structural breakage.</li>
+            <li>Subscription delivery model; per-customer fine-tuning for niche workflows.</li>
+            <li>Built on top of the agent-orchestration platform and MCP protocol described above — own infrastructure end-to-end.</li>
           </ul>
-          <p>Stack and tools: Golang, Python, React, Tailwind, Typescript, BigQuery, Docker, Kubernetes, Google Cloud, GRPC, Protobuf, Kafka, Cosmos SDK, Cosmos Hub, Agoric.</p>
         </div>
 
         <div class="job">
-          <h4>Head of IT Department - FRESH</h4>
-          <p>07/2018 - 04/2022 | Moscow</p>
-          <p>Online food store.</p>
+          <h4>Backend Developer — P2P.org (P2P Validator)</h4>
+          <p>08/2022 — 01/2024 | Remote</p>
+          <p>Infrastructure and data platform for Proof-of-Stake blockchain networks.</p>
           <ul>
-            <li>Managing a team of 10 people: backenders, frontenders, PM, designer</li>
-            <li>Solving complex cases, hiring and developing employees</li>
-            <li>Implementing business analytics based on Metabase</li>
-            <li>GraphQL API on Golang and <a href="https://gqlgen.com/">gqlgen</a></li>
-            <li>Several frontends of the online store on Gatsby (React, Typescript)</li>
-            <li>Several mobile applications on React Native (Typescript)</li>
-            <li>Own warehouse management system (stock, supplies, shipments)</li>
-            <li>Interfaces for almost all departments of the company: logisticians, drivers, packers, assemblers, cooks</li>
-            <li>Integration of the warehouse system with cash registers and scales (binary data export over the network)</li>
-            <li>Managing a cluster of 30+ virtual machines on Nomad in Yandex Cloud (nomad, consul, packer, ansible)</li>
-            <li>Monitoring and alerting with Prometheus/Grafana/AlertManager</li>
-            <li>Supporting own Gitlab and CI/CD for all projects</li>
+            <li>Built data extractors in <b>Python and Go</b> for Cosmos SDK-based networks; pipelines processed terabytes of on-chain data into BigQuery for the analytics team.</li>
+            <li>Shipped APIs over gRPC + Protobuf and React / TypeScript dashboards used daily by internal data analysts.</li>
+            <li>Owned end-to-end pipelines: Kafka ingestion → transformations → BigQuery → analyst-facing dashboards.</li>
+            <li>Deployed on Google Cloud / Kubernetes via Docker; collaborated cross-team on schema design and data SLAs.</li>
           </ul>
-          <p>Stack and tools: Golang, gqlgen, React, Gatsby, GraphQL, urql, antd, React Native, Typescript, PostgreSQL, PostgREST, Postgraphile, Metabase, Nomad, Yandex Cloud, Ansible, Packer, Docker, Prometheus, Grafana, Gitlab, Redis.</p>
+          <p>Stack and tools: Python, Go, React, TypeScript, BigQuery, Kafka, gRPC / Protobuf, Docker, Kubernetes, Google Cloud, Cosmos SDK, Cosmos Hub, Agoric.</p>
         </div>
 
         <div class="job">
-          <h4>Fullstack Developer - Statsbot.co</h4>
-          <p>12/2017 - 04/2018 | Moscow</p>
-          <p>SaaS startup for data analytics. Current cube.js.</p>
+          <h4>Head of IT Department — FRESH / MoscowFresh</h4>
+          <p>07/2018 — 04/2022 | Moscow</p>
+          <p>
+            Brought back to FRESH after a short stint at Statsbot specifically to lead the technical
+            integration of the company's first acquisition. Stayed on to run the entire in-house
+            technology function during a high-growth, M&amp;A-heavy phase — 2 Moscow warehouses,
+            ~1,000 orders/day.
+          </p>
           <ul>
-            <li>Support and addition of new functionality on Rails/React</li>
-            <li>Gained extensive experience in data analytics, which I actively used in the future</li>
+            <li>Managed a cross-functional team of 10 (backend, frontend, mobile, design, PM); led hiring, mentoring, and technical direction.</li>
+            <li><b>Led technical integration of acquired competitors</b> — consolidated their stacks, data, and operations into FRESH systems across multiple M&amp;A events.</li>
+            <li><b>Architected and built the warehouse management system from scratch</b> — stock, supplies, shipments, full warehouse-accounting automation — replacing manual operations across both sites.</li>
+            <li><b>Implemented company-wide business analytics on Metabase</b>, building on data-analytics experience from Statsbot; gave every department self-serve dashboards on top of operational data.</li>
+            <li>Shipped role-specific tools for every department: drivers, logistics managers, cooks, packers, assemblers; integrated the WMS with industrial cash registers and weighing scales over the network (binary protocol).</li>
+            <li>Built the customer-facing storefronts (Gatsby / React) and React Native mobile apps; backend on Go + <a href="https://gqlgen.com/">gqlgen</a> (GraphQL).</li>
+            <li>Operated a 30+ VM cluster on Yandex Cloud with Nomad / Consul, Packer / Ansible provisioning, Prometheus / Grafana / AlertManager monitoring, and self-hosted GitLab CI/CD.</li>
+            <li>Owned the full PoC → production cycle for every system shipped, often translating vague business requests directly into working tooling.</li>
+          </ul>
+          <p>Stack and tools: Go, gqlgen, GraphQL, React, Gatsby, React Native, TypeScript, PostgreSQL, PostgREST, Postgraphile, Metabase, Nomad, Yandex Cloud, Ansible, Packer, Docker, Prometheus, Grafana, GitLab, Redis.</p>
+        </div>
+
+        <div class="job">
+          <h4>Fullstack Developer — Statsbot.co</h4>
+          <p>12/2017 — 04/2018 | Moscow</p>
+          <p>Brief, focused stint at a SaaS data-analytics startup (the codebase later became the open-source project <b>Cube.js</b>) between FRESH tenures.</p>
+          <ul>
+            <li>Shipped features on Ruby on Rails / React in a fast-moving early-stage team.</li>
+            <li><b>First deep exposure to business analytics and OLAP workflows</b> — directly led to designing and implementing the company-wide analytics platform after returning to FRESH.</li>
           </ul>
           <p>Stack and tools: Ruby, Ruby on Rails, React, Redux, Webpack, Docker.</p>
         </div>
 
         <div class="job">
-          <h4>Fullstack Developer - FRESH</h4>
-          <p>01/2014 - 12/2017 | Moscow</p>
-          <p>Online food store.</p>
+          <h4>Fullstack Developer — FRESH / MoscowFresh</h4>
+          <p>01/2014 — 12/2017 | Moscow</p>
+          <p>Same company as the later Head of IT role — joined as the sole engineer and grew with the business.</p>
           <ul>
-            <li>Refining the website/CRM to a working state after another person</li>
-            <li>Mobile site on React</li>
-            <li>Refinement of the mobile iOS application (Objective-C)</li>
-            <li>Developing an application on React Native</li>
+            <li>Took over and stabilized the e-commerce platform (Rails / React) after the previous developer; built the mobile web with SSR.</li>
+            <li>Maintained the native iOS app (Objective-C) and migrated it to a React Native rewrite.</li>
           </ul>
-          <p>Stack and tools: Ruby, Ruby on Rails, React, SSR, React Native, Redux, Webpack, PostgreSQL, Redis, Sidekiq, PostgreSQL.</p>
+          <p>Stack and tools: Ruby, Ruby on Rails, React, SSR, React Native, Redux, Webpack, PostgreSQL, Redis, Sidekiq.</p>
         </div>
 
         <div class="job">
-          <h4>Backend Developer - Freelance</h4>
-          <p>06/2000 - 01/2014 | Sevastopol</p>
+          <h4>Freelance Web Developer</h4>
+          <p>2011 — 2014 | Sevastopol</p>
           <ul>
-            <li>HTML/jQuery layout</li>
-            <li>Development of websites in PHP (Yii)</li>
-            <li>Ruby on Rails</li>
+            <li>Built websites and web apps for SMB clients in PHP / Yii and Ruby on Rails; HTML / CSS / jQuery frontends; PostgreSQL and MongoDB backends.</li>
           </ul>
           <p>Stack and tools: PHP, Yii, Ruby, Ruby on Rails, HTML, CSS, jQuery, PostgreSQL, MongoDB.</p>
         </div>
@@ -127,24 +190,21 @@
         <section>
           <h3>Skills</h3>
           <ul>
-            <li>Golang*</li>
-            <li>React*, React Native*</li>
-            <li>Ruby*, Ruby on Rails*</li>
-            <li>Typescript, Node.js*</li>
-            <li>PostgreSQL*, BigQuery</li>
-            <li>Docker*, Kubernetes, Ansible, Nomad</li>
-            <li>Google Cloud, Yandex Cloud</li>
-            <li>Linux, Bash, <a href="https://github.com/alexesDev/resume">Git</a></li>
+            <li><b>AI / LLM:</b> OpenAI API, Model Context Protocol (MCP), AI agents, vector indexing, RAG, prompt engineering, agent orchestration, fine-tuning</li>
+            <li><b>Languages:</b> Python*, Go (Golang)*, TypeScript, Ruby*</li>
+            <li><b>Backend &amp; Data:</b> REST, GraphQL, gRPC / Protobuf, Kafka, BigQuery, PostgreSQL*, Redis</li>
+            <li><b>Cloud &amp; Infra:</b> Docker*, Kubernetes, Google Cloud, S3, Nomad / Consul, Ansible, Packer</li>
+            <li><b>Frontend:</b> React*, Next.js, Gatsby, React Native*, Tailwind</li>
           </ul>
-          <p class="hint">* - Confident with 5+ years of commercial experience</p>
+          <p class="hint">* — Confident with 5+ years of commercial experience</p>
         </section>
 
         <section>
           <h3>Languages</h3>
           <ul>
-            <li>Russian - Native</li>
-            <li>Ukrainian - Native</li>
-            <li>English - B2</li>
+            <li>Russian — Native</li>
+            <li>Ukrainian — Native</li>
+            <li>English — B2+</li>
           </ul>
         </section>
       </div>
@@ -152,43 +212,28 @@
       <section>
         <h3>Hobbies</h3>
         <dl>
+          <dt>Zettelkasten / Second Brain</dt>
+          <dd>3+ years on a personal Obsidian graph. Directly seeded <a href="https://trip2g.com">trip2g.com</a>.</dd>
+        </dl>
+
+        <dl>
           <dt>Electronics</dt>
-          <dd>
-            Design, order, and assemble a simple device using popular microcontrollers.
-            Useful skills: C++.
-          </dd>
+          <dd>Designing and assembling small devices on popular microcontrollers. Useful skills: C++.</dd>
         </dl>
 
         <dl>
           <dt>3D Printing</dt>
-          <dd>
-            Design parts/devices in CAD and print them.
-            Useful skills: CAD proficiency, experience with CNC machines.
-          </dd>
+          <dd>Designing parts in CAD and printing them. Useful skills: CAD proficiency, CNC experience.</dd>
         </dl>
 
         <dl>
           <dt>Hydroponics</dt>
-          <dd>
-            Soil-free plant growth with automation.
-            Useful skills: nutrition and environment monitoring on Prometheus/Grafana.
-          </dd>
+          <dd>Soil-free plant growth with automation. Useful skills: nutrition / environment monitoring on Prometheus / Grafana.</dd>
         </dl>
 
         <dl>
           <dt>GameDev</dt>
-          <dd>
-            Unity, Godot, VR.
-            Useful skills: C#, C++.
-          </dd>
-        </dl>
-
-        <dl>
-          <dt>Zettelkasten/Second Brain</dt>
-          <dd>
-            Constantly taking notes on new knowledge, thoughts, and their connections.
-            Useful skills: documentation, experience with knowledge bases in systems like Notion.
-          </dd>
+          <dd>Unity, Godot, VR. Useful skills: C#, C++.</dd>
         </dl>
       </section>
     </div>
