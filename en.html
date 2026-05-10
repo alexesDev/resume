@@ -70,9 +70,10 @@
         interlinked notes is much easier. The original plan was a knowledge-graph engine where
         you could carve out a subgraph and sell it. I knew AI should fit in somewhere but couldn't
         see how. Once I tried MCP, the picture clicked: the base becomes a private external RAG,
-        the sensitive data stays on the user's machine, and the agent — not the human — is the
-        natural consumer. Everything below is what I had to build to make that workable. The same
-        realization later spun off both iiminion.ru and the AI Agent Orchestration Platform.
+        sensitive data stays on the user's machine, and that's when I got it — the agent needs
+        the knowledge base; I just need the answer. Everything below is what I had to build to
+        make that workable. The same realization later spun off both iiminion.ru and the AI
+        Agent Orchestration Platform.
       </p>
       <ul>
         <li>Markdown-first knowledge engine — ingests markdown, renders each note as a page, exposes the corpus as a typed knowledge graph; arbitrary schemas and monetizable subgraphs can be built on top.</li>
