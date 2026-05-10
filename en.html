@@ -126,18 +126,16 @@
         <div class="job">
           <h4>Founder &amp; AI Engineer — <a href="https://iiminion.ru">iiminion.ru</a></h4>
           <p>2026 — Present | Remote</p>
-          <p>Productizing autonomous AI agents on a subscription basis; agents are packaged for self-serve use and fine-tuned per customer to match their workflow.</p>
+          <p>Productized autonomous AI agents on top of my open-source stack (trip2g + Hermes orchestration), sold by subscription. The subscriptions help fund further open-source work. Agents are packaged for self-serve and fine-tuned per customer.</p>
           <ul>
             <li><b>Competitor-monitoring agent:</b> tracks competitors and produces branded social posts and content for the customer's product in their voice — research, drafting, and publishing.</li>
             <li><b>Script-to-video pipeline:</b> end-to-end automated short-form video generation from a written script.</li>
             <li><b>Edit-stable landing-page generator:</b> produces marketing landing pages that survive iterative client edits without structural breakage.</li>
-            <li>Subscription delivery model; per-customer fine-tuning for niche workflows.</li>
-            <li>Built on top of the agent-orchestration platform and MCP protocol described above — own infrastructure end-to-end.</li>
           </ul>
         </div>
 
         <div class="job">
-          <h4>Backend Developer — P2P.org (P2P Validator)</h4>
+          <h4>Backend Developer, Tool Team — P2P.org (P2P Validator)</h4>
           <p>08/2022 — 01/2024 | Remote</p>
           <p>Infrastructure and data platform for Proof-of-Stake blockchain networks. The best engineering culture I've worked in.</p>
           <ul>
@@ -151,7 +149,7 @@
         </div>
 
         <div class="job">
-          <h4>Head of IT Department — FRESH / MoscowFresh</h4>
+          <h4>Head of IT Department — FRESH / MoscowFresh / FamilyFriend</h4>
           <p>07/2018 — 04/2022 | Moscow</p>
           <p>
             Brought back to FRESH after a short stint at Statsbot specifically to lead the technical
@@ -164,7 +162,7 @@
             <li><b>Led technical integration of acquired competitors</b> — consolidated their stacks, data, and operations into FRESH systems across multiple M&amp;A events.</li>
             <li><b>Architected and built the warehouse management system from scratch</b> — stock, supplies, shipments, full warehouse-accounting automation — replacing manual operations across both sites.</li>
             <li><b>Implemented company-wide business analytics on Metabase</b>, building on data-analytics experience from Statsbot; gave every department self-serve dashboards on top of operational data.</li>
-            <li>Shipped role-specific tools for every department: drivers, logistics managers, cooks, packers, assemblers; integrated the WMS with industrial cash registers and weighing scales over the network (binary protocol).</li>
+            <li>Shipped role-specific tools for every department: drivers, logistics managers, cooks, packers, assemblers; integrated the WMS with industrial cash registers and weighing scales over the network (binary protocol — open-source Go driver: <a href="https://github.com/alexesDev/cas">cas</a>).</li>
             <li>Built the customer-facing storefronts (Gatsby / React) and React Native mobile apps; backend on Go + <a href="https://gqlgen.com/">gqlgen</a> (GraphQL).</li>
             <li>Operated a 30+ VM cluster on Yandex Cloud with Nomad / Consul, Packer / Ansible provisioning, Prometheus / Grafana / AlertManager monitoring, and self-hosted GitLab CI/CD.</li>
             <li>Owned the full PoC → production cycle for every system shipped, often translating vague business requests directly into working tooling.</li>
@@ -184,11 +182,12 @@
         </div>
 
         <div class="job">
-          <h4>Fullstack Developer — FRESH / MoscowFresh</h4>
+          <h4>Fullstack Developer — FRESH</h4>
           <p>01/2014 — 12/2017 | Moscow</p>
           <p>Same company as the later Head of IT role — joined as the sole engineer and grew with the business.</p>
           <ul>
             <li>Took over and stabilized the e-commerce platform (Rails / React) after the previous developer; built the mobile web with SSR.</li>
+            <li>Found and fixed a one-line perf bug in <a href="https://github.com/activeadmin/arbre/pull/40">Arbre</a> — the templating core of <a href="https://github.com/activeadmin/activeadmin">ActiveAdmin</a> (~10k stars; the Rails admin framework powering FRESH's backend). ~8× speedup on the affected rendering path. Discovered while maintaining ~100 admin controllers. PR merged upstream.</li>
             <li>Maintained the native iOS app (Objective-C) and migrated it to a React Native rewrite.</li>
           </ul>
           <p>Stack and tools: Ruby, Ruby on Rails, React, SSR, React Native, Redux, Webpack, PostgreSQL, Redis, Sidekiq.</p>
