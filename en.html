@@ -46,9 +46,11 @@
       open-source MCP knowledge protocol called <a href="https://trip2g.com">trip2g.com</a>.
     </p>
     <p>
-      Python and Go are my main languages. Most of my career has been about taking unclear specs
-      and turning them into systems that actually run. I've gotten good at working without a plan
-      when there isn't one.
+      Go and TypeScript are my main languages; Python is where most of my recent AI work happens.
+      Most of my career has been about taking unclear specs and turning them into something that
+      runs. My day-to-day rhythm changed in 2025 — smaller, steadier steps toward goals that
+      keep shifting, after a year of testing whether raw throughput converts into revenue
+      (it doesn't on its own).
     </p>
   </section>
 
@@ -56,45 +58,64 @@
     <h3>Featured Projects</h3>
 
     <div class="project">
-      <h4>AI Agent Orchestration Platform — Independent R&amp;D</h4>
-      <p>2025 — Present</p>
-      <p>Infrastructure for autonomous AI agents that operate on a shared, transparent knowledge substrate.</p>
-      <ul>
-        <li>Built a control panel for deploying Hermes agents into a Nomad cluster — one-click rollout, lifecycle management, fleet-level observability.</li>
-        <li>Packaged the agent so it maintains its own Obsidian vault as a "second brain" — every action is recorded with its rationale (what was done, how, why), giving the agent transparent, human-readable memory and full auditability.</li>
-        <li>Multi-agent coordination through shared memory: agents read each other's vaults to align on context, hand off tasks, and avoid duplicate work — a lightweight alternative to heavy orchestration frameworks.</li>
-        <li>Designed to interoperate with trip2g.com so agent vaults are indexable and queryable across the same federated MCP protocol.</li>
-        <li>Currently exploring agent evolution: when the base skills layer or the underlying engine changes, a new agent reads the second brain of its ancestor and inherits the context instead of starting from scratch. Groundwork for automated evolutionary testing, a multi-month effort.</li>
-      </ul>
-    </div>
-
-    <div class="project">
       <h4><a href="https://trip2g.com">trip2g.com</a> — Founder, Sole Engineer (open source, MIT)</h4>
       <p>2025 — Present</p>
       <p>
         A federated protocol that turns markdown note collections (Obsidian, Notion, Google Drive,
         Telegram) into RAG sources for AI agents over Model Context Protocol. About 12 months of
-        solo work from the first prototype to a public hub where other people now plug in their own
-        bases.
+        solo work from the first prototype to a public hub where other people now plug in their
+        own bases.
       </p>
       <p>
         It didn't start as an AI project. I'd been keeping an Obsidian vault for three years and
         wanted a way to share parts of it. Writing long posts is hard; writing 5–10 short
-        interlinked notes is much easier. The original plan was a knowledge-graph engine where you
-        could carve out a subgraph and sell it. I knew AI should fit in somewhere but couldn't see
-        how. Once I tried MCP, the picture clicked: the base becomes a private external RAG, the
-        sensitive data stays on the user's machine, and the agent — not the human — is the natural
-        consumer. Everything below (federation, the vector router, the self-describing bases) is
-        what I had to build to make that workable. The same realization is what spun off iiminion.ru.
+        interlinked notes is much easier. The original plan was a knowledge-graph engine where
+        you could carve out a subgraph and sell it. I knew AI should fit in somewhere but couldn't
+        see how. Once I tried MCP, the picture clicked: the base becomes a private external RAG,
+        the sensitive data stays on the user's machine, and the agent — not the human — is the
+        natural consumer. Everything below is what I had to build to make that workable. The same
+        realization later spun off both iiminion.ru and the AI Agent Orchestration Platform.
       </p>
       <ul>
-        <li><b>Markdown-first knowledge engine</b> — ingests markdown, renders each note as a page, exposes the corpus as a typed knowledge graph; arbitrary schemas and monetizable subgraphs can be built on top.</li>
-        <li><b>MCP server as external RAG</b> — keeps sensitive data local; the agent issues targeted queries instead of shipping the full corpus to a third-party service.</li>
-        <li><b>Self-describing bases</b> — each base ships its own search instructions, letting the calling agent <i>plan its retrieval</i> rather than rely on a fixed retriever.</li>
-        <li><b>Vector "router" base</b> — a meta-base over other bases: semantic search routes a query to the right downstream sources, then the agent fans out across the matches.</li>
-        <li><b>Protocol-level federation with adapters</b> for Notion, Google Drive, Telegram, etc. — direct hub-to-hub peer-to-peer, no central relay.</li>
-        <li><b>Recent features:</b> per-heading note retrieval and TOC over MCP; admin-mode API key (the agent can manage the system itself); BEM templating that makes agent-driven landing-page edits structurally stable.</li>
+        <li>Markdown-first knowledge engine — ingests markdown, renders each note as a page, exposes the corpus as a typed knowledge graph; arbitrary schemas and monetizable subgraphs can be built on top.</li>
+        <li>MCP server as external RAG — keeps sensitive data local; the agent issues targeted queries instead of shipping the whole corpus to a third-party service.</li>
+        <li>Self-describing bases — each base ships its own search instructions, so the calling agent plans its own retrieval.</li>
+        <li>Vector "router" base — a meta-base over other bases; semantic search routes a query to the right downstream sources, then the agent fans out across the matches.</li>
+        <li>Protocol-level federation with adapters for Notion, Google Drive, Telegram, etc. — direct hub-to-hub peer-to-peer, no central relay.</li>
+        <li>Template engine with full access to the markdown AST — extract third-level sections as cards, combine several notes into a landing page, etc. Agents update markdown and the rendered site updates with it.</li>
+        <li>Recent features: per-heading note retrieval and TOC over MCP; admin-mode API key so an agent can manage the system itself; BEM templating that makes agent-driven landing-page edits structurally stable.</li>
         <li>External users are building their own subgraphs and case-study bases on the protocol.</li>
+      </ul>
+      <p>
+        Built in Go (single binary, deploys anywhere) on SQLite + Litestream. SQLite gives the
+        app stateful local speed; Litestream streams every write out to S3, which turns the
+        persistence story effectively stateless from the orchestrator's point of view — Nomad can
+        move the container between nodes and lose nothing, S3 carries the durability. When I
+        started this, there weren't good databases that sat directly on top of S3 yet, so the
+        hybrid (hot SQLite cache on the server, replicated state on S3) was the cheapest reliable
+        path. 15 years of small infrastructure choices baked in.
+      </p>
+      <p>
+        <b><a href="https://simplecloud.2pub.me">simplecloud.2pub.me</a></b> — hosting platform
+        for trip2g instances. The panel manages a Nomad cluster; adding a server pre-provisions
+        warm container slots, so a new user gets an instant, already-running instance instead of
+        waiting through a cold start. The orchestration platform below now deploys Hermes agents
+        through the same panel.
+      </p>
+    </div>
+
+    <div class="project">
+      <h4>AI Agent Orchestration Platform — Independent R&amp;D</h4>
+      <p>2025 — Present</p>
+      <p>
+        Spun off from a trip2g realization: if a private knowledge base is what an agent needs as
+        memory, every agent should get one of its own.
+      </p>
+      <ul>
+        <li>Each Hermes agent gets its own dedicated trip2g instance as long-term memory — every action recorded with rationale, the entire knowledge browsable through trip2g's wiki-style web UI, full audit trail.</li>
+        <li>Multi-agent coordination through shared memory: agents read each other's instances to align on context, hand off tasks, avoid duplicate work — a lightweight alternative to heavy orchestration frameworks.</li>
+        <li>Deployment runs through the simplecloud panel above — same Nomad cluster, same warm-slot provisioning, same instant rollout.</li>
+        <li>Currently exploring agent evolution: when the base skills layer or the underlying engine changes, a new agent reads the second brain of its ancestor and inherits the context. Groundwork for automated evolutionary testing, a multi-month effort.</li>
       </ul>
     </div>
   </section>
@@ -123,11 +144,12 @@
           <p>Infrastructure and data platform for Proof-of-Stake blockchain networks.</p>
           <ul>
             <li>Built data extractors in <b>Python and Go</b> for Cosmos SDK-based networks; pipelines processed terabytes of on-chain data into BigQuery for the analytics team.</li>
-            <li>Shipped APIs over gRPC + Protobuf and React / TypeScript dashboards used daily by internal data analysts.</li>
-            <li>Owned end-to-end pipelines: Kafka ingestion → transformations → BigQuery → analyst-facing dashboards.</li>
+            <li>Shipped gRPC + Protobuf APIs for the analytics team to consume pipeline outputs.</li>
+            <li>Built an open-source <a href="https://github.com/p2p-org/p2p-agoric-vstorage-viewer">viewer for Agoric's on-chain value tree</a> in React / TypeScript while running the Agoric integration at P2P solo. Started it as a way to figure out the chain for myself; the Agoric core team picked it up and used it daily, then rewrote it from scratch on the same concept — now hosted at <a href="https://vstorage.agoric.net">vstorage.agoric.net</a>.</li>
+            <li>Owned the data pipelines end to end: chain extraction → transformations → BigQuery tables the analysts queried.</li>
             <li>Deployed on Google Cloud / Kubernetes via Docker; collaborated cross-team on schema design and data SLAs.</li>
           </ul>
-          <p>Stack and tools: Python, Go, React, TypeScript, BigQuery, Kafka, gRPC / Protobuf, Docker, Kubernetes, Google Cloud, Cosmos SDK, Cosmos Hub, Agoric.</p>
+          <p>Stack and tools: Python, Go, React, TypeScript, BigQuery, gRPC / Protobuf, Docker, Kubernetes, Google Cloud, Cosmos SDK, Cosmos Hub, Agoric.</p>
         </div>
 
         <div class="job">
@@ -191,7 +213,7 @@
           <ul>
             <li><b>AI / LLM:</b> OpenAI API, Model Context Protocol (MCP), AI agents, vector indexing, RAG, prompt engineering, agent orchestration, fine-tuning</li>
             <li><b>Languages:</b> Python, Go (Golang)*, TypeScript, Ruby*</li>
-            <li><b>Backend &amp; Data:</b> REST, GraphQL, gRPC / Protobuf, Kafka, BigQuery, PostgreSQL*, Redis</li>
+            <li><b>Backend &amp; Data:</b> REST, GraphQL, gRPC / Protobuf, BigQuery, PostgreSQL*, SQLite, Redis</li>
             <li><b>Cloud &amp; Infra:</b> Docker*, Kubernetes, Google Cloud, S3, Nomad / Consul, Ansible, Packer</li>
             <li><b>Frontend:</b> React*, Next.js, Gatsby, React Native*, Tailwind</li>
           </ul>
