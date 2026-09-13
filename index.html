@@ -1,262 +1,110 @@
-<!DOCTYPE html>
-
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Алексей Юрченко — AI Agent Engineer / Senior Fullstack Engineer</title>
-<link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
-
-<meta property="og:title" content="Резюме. Юрченко Алексей">
-<meta property="og:description" content="AI Agent Engineer / Senior Fullstack Engineer. Python, Go, MCP, AI агенты.">
-<meta property="og:url" content="https://alexesdev.github.io/resume/">
+<!doctype html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Алексей Юрченко — Senior Backend Engineer — Go / Python</title>
+<meta name="description" content="Я разработчик с 15-летним опытом: создаю бэкенд, пайплайны данных и рабочие системы для бизнеса. В P2P.org писал на Go и Python пайплайны для обработки терабайтов блокчейн-данных. Во ФРЭШ руководил командой из 10 человек: наши системы обслуживали два склада и около 1000 заказов в день. Сейчас развиваю открытую платформу знаний и инфраструктуру AI-агентов.">
+<meta property="og:title" content="Алексей Юрченко — Senior Backend Engineer — Go / Python">
+<meta property="og:description" content="Go, Python, production systems, data pipelines, AI infrastructure. Vietnam · UTC+6 working time zone.">
+<meta property="og:url" content="https://alexesdev.github.io/resume/index.html">
 <meta property="og:type" content="website">
+<link rel="stylesheet" href="styles.css?v=3">
+</head>
+<body>
+<main class="resume">
+<nav aria-label="Версия резюме"><a href="index.html" aria-current="page">RU · Backend</a><a href="en.html">EN · Backend</a><a href="en-ai.html">EN · AI</a><a href="ru.pdf">PDF ↓</a></nav>
+<header>
+<h1>Алексей Юрченко</h1>
+<p class="headline">Senior Backend Engineer — Go / Python</p>
+<p class="contact"><a href="mailto:alexes.dev@gmail.com">alexes.dev@gmail.com</a> · <a href="https://github.com/alexesdev">github.com/alexesdev</a></p>
+<p class="location">Вьетнам · Рабочий часовой пояс: UTC+6</p>
+<p class="availability">Удалённая работа · Полная занятость или контракт</p>
+</header>
+<section aria-labelledby="summary">
+<h2 id="summary">Профиль</h2>
+<p>Я разработчик с 15-летним опытом: создаю бэкенд, пайплайны данных и рабочие системы для бизнеса. В P2P.org писал на Go и Python пайплайны для обработки терабайтов блокчейн-данных. Во ФРЭШ руководил командой из 10 человек: наши системы обслуживали два склада и около 1000 заказов в день. Сейчас развиваю открытую платформу знаний и инфраструктуру AI-агентов.</p>
+</section>
+<section class="skills" aria-labelledby="skills">
+<h2 id="skills">Навыки</h2>
+<p><strong>Backend:</strong> Go, Python, TypeScript, Ruby; REST, GraphQL, gRPC / Protobuf.</p>
+<p><strong>Данные:</strong> PostgreSQL, SQLite, BigQuery, Redis.</p>
+<p><strong>Инфраструктура:</strong> Docker, Kubernetes, Google Cloud, S3, Nomad / Consul, CI/CD, Prometheus / Grafana.</p>
+<p><strong>Frontend:</strong> React, React Native.</p>
+</section>
+<section aria-labelledby="experience">
+<h2 id="experience">Опыт работы</h2>
+<article class="job">
+<h3>Независимый разработчик — trip2g и инфраструктура AI-агентов</h3>
+<p class="meta">2025 – настоящее время · Удалённо</p>
+<p>Создал <a href="https://trip2g.com">trip2g</a> — открытую платформу знаний (MIT): от прототипа до публичного сервиса с внешними пользователями.</p>
+<ul>
+<li>Спроектировал бэкенд на Go для публикации markdown, графа знаний и поиска через Model Context Protocol (MCP); добавил поиск по федеративным базам.</li>
+<li>Разработал панель хостинга на Nomad с заранее подготовленными контейнерами; для хранения использовал SQLite с репликацией в S3 через Litestream.</li>
+<li>Построил инфраструктуру развёртывания агентов: отдельные базы долговременной памяти, общий контекст и веб-интерфейс для просмотра знаний.</li>
+<li>Разработал <a href="https://iiminion.ru">агентные сценарии</a> для исследования конкурентов, подготовки контента, генерации видео и лендингов.</li>
+</ul>
+<p class="stack">Go · TypeScript · SQLite · Litestream · S3 · Nomad · MCP · RAG</p>
+</article>
+<article class="job">
+<h3>Бэкенд-разработчик, Tool Team — P2P.org</h3>
+<p class="meta">Август 2022 – январь 2024 · Удалённо</p>
+<p>Разрабатывал инфраструктуру данных для Proof-of-Stake блокчейн-сетей.</p>
+<ul>
+<li>Создал экстракторы на Python и Go для Cosmos SDK-сетей; пайплайны обрабатывали терабайты ончейн-данных и загружали их в BigQuery для аналитиков.</li>
+<li>Отвечал за извлечение, преобразование и доставку данных. Разработал gRPC / Protobuf API для доступа к результатам, согласовывал схемы и требования к данным.</li>
+<li>Разработал открытый <a href="https://github.com/p2p-org/p2p-agoric-vstorage-viewer">вьюер состояния Agoric</a> на React / TypeScript и самостоятельно вёл интеграцию Agoric; команда Agoric использовала инструмент ежедневно.</li>
+<li>Развёртывал сервисы в Google Cloud и Kubernetes с помощью Docker.</li>
+</ul>
+<p class="stack">Python · Go · BigQuery · gRPC · Protobuf · Google Cloud · Kubernetes · Cosmos SDK</p>
+</article>
 
-<link rel="stylesheet" href="styles.css?v=2">
+</section>
+<section class="page-two" aria-labelledby="earlier-experience">
+<h2 id="earlier-experience">Предыдущий опыт</h2>
+<article class="job">
+<h3>Руководитель IT / ведущий разработчик — ФРЭШ</h3>
+<p class="meta">Июль 2018 – апрель 2022 · Москва</p>
+<p>Отвечал за разработку и инфраструктуру e-commerce компании: два склада, около 1000 заказов в день.</p>
+<ul>
+<li>Управлял командой из 10 человек: бэкенд, фронтенд, мобильная разработка, дизайн и продукт. Отвечал за найм, менторинг и техническое направление.</li>
+<li>Руководил технической интеграцией поглощённых компаний: объединял приложения, данные и операционные процессы.</li>
+<li>Спроектировал и разработал складскую систему: остатки, поставки и отгрузки; интегрировал рабочие интерфейсы с промышленными весами и кассами.</li>
+<li>Разрабатывал сервисы на Go / GraphQL, витрины на React и приложения на React Native; внедрил Metabase для операционной аналитики отделов.</li>
+<li>Управлял 30+ виртуальными машинами: Nomad / Consul, автоматизация развёртывания, GitLab CI/CD, мониторинг Prometheus / Grafana.</li>
+</ul>
+<p class="stack">Go · GraphQL / gqlgen · PostgreSQL · React · React Native · Nomad · Ansible · Metabase</p>
+</article>
+<article class="job">
+<h3>Full-stack разработчик — Statsbot</h3>
+<p class="meta">Декабрь 2017 – апрель 2018 · Москва</p>
+<ul>
+<li>Разрабатывал аналитический SaaS на Ruby on Rails и React в ранней команде стартапа. Работал с задачами бизнес-аналитики и аналитическими процессами.</li>
+</ul>
+</article>
+<article class="job">
+<h3>Full-stack разработчик — ФРЭШ</h3>
+<p class="meta">Январь 2014 – декабрь 2017 · Москва</p>
+<ul>
+<li>Пришёл единственным разработчиком; поддерживал и развивал e-commerce платформу на Rails / React и мобильную веб-версию.</li>
+<li>Исправил проблему производительности в Arbre — библиотеке рендеринга ActiveAdmin: ускорил затронутый путь рендеринга примерно в 8 раз; исправление принято upstream.</li>
+<li>Поддерживал iOS-приложение на Objective-C и перевёл его на React Native.</li>
+</ul>
+</article>
+<article class="job">
+<h3>Веб-разработчик, фриланс</h3>
+<p class="meta">2011 – 2014</p>
+<ul>
+<li>Создавал сайты и веб-приложения для малого бизнеса на PHP / Yii, Ruby on Rails и JavaScript с реляционными базами данных.</li>
+</ul>
+</article>
 
-<div class="container">
-  <div class="head">
-    <header>
-      <h1>Алексей Юрченко</h1>
-      <h2>AI Agent Engineer / Senior Fullstack Engineer</h2>
-      <div class="contact">
-        <p>Email: <a href="mailto:alexes.dev@gmail.com">alexes.dev@gmail.com</a></p>
-        <p>GitHub: <a href="https://github.com/alexesdev">github.com/alexesdev</a></p>
-        <p>Удалённо / Digital nomad</p>
-      </div>
-    </header>
-    <div>
-      <div class="langs">
-        <a href="/resume">RU</a> | <a href="/resume/en.html">EN</a> | <a href="/resume/ru.pdf">PDF</a>
-      </div>
-    </div>
-  </div>
-
-  <section>
-    <h3>Обо мне</h3>
-    <p>
-      Ищу роль <b>AI Agent Developer</b>. Пишу большую часть кода для агентов, которые
-      помогают людям.
-    </p>
-    <p>
-      15 лет в разработке с 2011 года — без полных перерывов, даже в 2024, когда я выгорел
-      и писать код было тошно, я всё равно не смог остановиться. AI-инструменты вытащили
-      меня из ямы: теперь я могу применять весь свой опыт, пока LLM печатает код в 5× быстрее
-      человека. Сейчас веду <a href="https://iiminion.ru">iiminion.ru</a>: упаковываю
-      автономных AI-агентов и продаю по подписке. Среди них агент, который смотрит за
-      конкурентами и пишет посты в нужной стилистике; пайплайн «сценарий → короткое видео»;
-      генератор лендингов, которые не разваливаются при правках клиента; плюс дообучение
-      под задачу. Инфраструктура под этим — тоже моя: платформа оркестрации
-      (Hermes-агенты на Nomad-кластере, координируются через общую память).
-    </p>
-    <p>
-      Основные языки — Go и TypeScript. Бо́льшая часть карьеры — превращение размытых ТЗ во
-      что-то работающее. В 2025 поменял ритм работы: маленькие, стабильные шаги к целям,
-      которые постоянно сдвигаются под рынок.
-    </p>
-  </section>
-
-  <section>
-    <h3>Текущие проекты</h3>
-
-    <div class="project">
-      <h4><a href="https://trip2g.com">trip2g.com</a> — open-source проект (MIT)</h4>
-      <p>2025 — настоящее время</p>
-      <p>
-        Федеративный протокол, который превращает коллекции markdown-заметок (Obsidian, Notion,
-        Google Drive, Telegram) в RAG-источники для AI-агентов поверх Model Context Protocol.
-        Около 12 месяцев соло — от первого прототипа до публичного хаба, к которому теперь
-        подключают свои базы другие люди.
-      </p>
-      <p>
-        Изначально это не было AI-проектом. Я три года вёл Obsidian и хотел научиться делиться
-        частями своего vault'а. Длинные посты писать тяжело, а 5–10 коротких связанных заметок —
-        легко. Первая идея — движок графа знаний, в котором можно выделить подграф и продать.
-        Я понимал, что AI должен быть где-то здесь, но не видел как. Когда попробовал MCP, всё
-        собралось: база становится приватным внешним RAG, чувствительные данные остаются у
-        пользователя, и тогда дошло — база знаний нужна агенту, а мне нужен ответ. Всё, что
-        ниже, — это то, что пришлось построить, чтобы это работало. Тот же инсайт позже породил
-        и iiminion.ru, и платформу оркестрации AI-агентов.
-      </p>
-      <ul>
-        <li>Markdown-движок знаний — принимает markdown, рендерит каждую заметку как страницу, представляет корпус как типизированный граф знаний; поверх можно строить произвольные схемы и монетизируемые подграфы.</li>
-        <li>MCP-сервер как внешний RAG — чувствительные данные остаются локально; агент делает прицельные запросы вместо отдачи всего корпуса третьему сервису.</li>
-        <li>Self-describing bases — у каждой базы свои инструкции по поиску, вызывающий агент сам планирует retrieval.</li>
-        <li>Векторный «роутер» — мета-база поверх остальных: семантический поиск маршрутизирует запрос к нужным источникам, дальше агент идёт веером по найденным.</li>
-        <li>Федерация на уровне протокола, с адаптерами для Notion, Google Drive, Telegram и т.д. — прямые hub-to-hub p2p-связи, без центрального релея.</li>
-        <li>Шаблонизатор с полным доступом к markdown AST — извлечение секций третьего уровня как карточек, сборка нескольких заметок в лендинг и т.п. Агент правит markdown — рендер сайта обновляется вместе с ним.</li>
-        <li>Свежие фичи: запрос частей заметки по заголовку и TOC через MCP; админский режим API-ключа (агент сам управляет системой); BEM-шаблонизация — агент стабильно правит лендинги без ломки структуры.</li>
-        <li>На протоколе уже работают внешние пользователи — собирают свои подграфы и кейсы.</li>
-      </ul>
-      <p>
-        Сделано на Go (один бинарник под любую платформу) поверх SQLite + Litestream. SQLite
-        даёт приложению локальную stateful-скорость; Litestream стримит каждую запись в S3,
-        и с точки зрения оркестратора persistence становится фактически stateless — Nomad
-        может переносить контейнер между нодами и ничего не терять, S3 берёт на себя
-        долговечность. Когда я начинал, ещё не было хороших баз, живущих напрямую на S3,
-        поэтому такой гибрид (горячий SQLite-кеш на сервере, реплицированное состояние в S3) —
-        самый дешёвый надёжный путь. 15 лет инфраструктурных решений, накопленных по мелочам,
-        спрессованы в этот стек.
-      </p>
-      <p>
-        <b><a href="https://simplecloud.2pub.me">simplecloud.2pub.me</a></b> — хостинг для
-        trip2g-инстансов. Панель управляет Nomad-кластером; добавление сервера сразу
-        развёртывает «прогретые» слоты-контейнеры, новый пользователь получает мгновенно
-        запущенный экземпляр без cold-start. Платформа оркестрации (ниже) разворачивает
-        Hermes-агентов через ту же панель.
-      </p>
-    </div>
-
-    <div class="project">
-      <h4>Платформа оркестрации AI-агентов — собственная R&amp;D</h4>
-      <p>2025 — настоящее время</p>
-      <p>
-        Появилась как ответвление trip2g: если приватная база знаний — то, что нужно агенту
-        вместо памяти, у каждого агента должна быть своя.
-      </p>
-      <ul>
-        <li>У каждого Hermes-агента своя выделенная trip2g-инстанция как долгосрочная память. Каждое действие записывается с обоснованием, всё знание агента просматривается через wiki-style веб-интерфейс trip2g, полный аудит.</li>
-        <li>Координация мульти-агентов через общую память: агенты читают инстанции друг друга, чтобы выровнять контекст, передавать задачи и не дублировать работу — лёгкая альтернатива тяжёлым фреймворкам оркестрации.</li>
-        <li>Деплой идёт через ту же панель simplecloud — тот же Nomad-кластер, те же прогретые слоты, мгновенный rollout.</li>
-        <li>Сейчас исследую эволюцию агентов: когда меняется базовый слой скиллов или движок бота, новый агент читает второй мозг предка и наследует контекст. Подготовка к автоматическим эволюционным тестам — задача на несколько месяцев.</li>
-      </ul>
-    </div>
-  </section>
-
-  <div class="content">
-    <div class="main-info">
-      <section>
-        <h3>Опыт работы</h3>
-
-        <div class="job">
-          <h4>Founder &amp; AI Engineer — <a href="https://iiminion.ru">iiminion.ru</a></h4>
-          <p>2026 — настоящее время | Удалённо</p>
-          <p>Продуктизированные автономные AI-агенты поверх open-source стека (trip2g + платформа оркестрации Hermes), продаются по подписке. Подписки помогают развивать open source. Агенты упакованы для self-serve и дообучаются под задачу клиента.</p>
-          <ul>
-            <li><b>Агент-наблюдатель за конкурентами:</b> отслеживает конкурентов, генерирует брендированные посты и контент про продукт клиента в его голосе — research, draft, публикация.</li>
-            <li><b>Пайплайн «сценарий → видео»:</b> сквозная автоматическая генерация коротких видео из текстового сценария.</li>
-            <li><b>Edit-stable генератор лендингов:</b> производит маркетинговые лендинги, которые переживают итеративные правки клиента без ломки структуры.</li>
-          </ul>
-        </div>
-
-        <div class="job">
-          <h4>Бекенд-разработчик, Tool Team — P2P.org (P2P Validator)</h4>
-          <p>08/2022 — 01/2024 | Удалённо</p>
-          <p>Инфраструктура и сбор данных для PoS-блокчейн-сетей. Лучшая инженерная культура, в которой я работал.</p>
-          <ul>
-            <li>Разработал экстракторы данных на <b>Python и Go</b> для cosmos-sdk-сетей; пайплайны грузили терабайты ончейн-данных в BigQuery для дата-аналитиков.</li>
-            <li>Сделал API на gRPC + Protobuf, которыми аналитики потребляли результаты пайплайнов.</li>
-            <li>Написал на React / TypeScript опенсорс-<a href="https://github.com/p2p-org/p2p-agoric-vstorage-viewer">вьюер для дерева значений Agoric в блокчейне</a> — вёл интеграцию с Agoric в P2P в одиночку. Делал для себя, чтобы разобраться с цепочкой; команда Agoric подхватила и пользовалась ежедневно, позже переписали его с нуля на той же идее — теперь он хостится на <a href="https://vstorage.agoric.net">vstorage.agoric.net</a>.</li>
-            <li>Владел сквозными пайплайнами: extraction из цепочки → трансформации → таблицы в BigQuery, которые читали аналитики.</li>
-            <li>Деплой на Google Cloud / Kubernetes через Docker; кросс-командная работа над схемами и SLA данных.</li>
-          </ul>
-          <p>Стек и инструменты: Python, Go, React, TypeScript, BigQuery, gRPC / Protobuf, Docker, Kubernetes, Google Cloud, Cosmos SDK, Cosmos Hub, Agoric.</p>
-        </div>
-
-        <div class="job">
-          <h4>Руководитель IT-отдела — ФРЭШ / MoscowFresh / FamilyFriend</h4>
-          <p>07/2018 — 04/2022 | Москва</p>
-          <p>
-            Меня позвали обратно в ФРЭШ после короткого захода в Statsbot конкретно ради
-            руководства тех. интеграцией первого поглощения. Остался вести всю in-house
-            технологическую функцию во время фазы активного роста и M&amp;A — 2 склада в Москве,
-            ~1 000 заказов в день.
-          </p>
-          <ul>
-            <li>Управлял кросс-функциональной командой из 10 человек (бэк, фронт, мобайл, дизайн, PM); найм, менторинг, тех. направление.</li>
-            <li><b>Руководил тех. интеграцией поглощённых конкурентов</b> — слияние их стеков, данных и операций в системы ФРЭШ через несколько M&amp;A-событий.</li>
-            <li><b>Спроектировал и построил систему управления складом с нуля</b> — остатки, поставки, отгрузки, полная автоматизация складского учёта — заменил ручные операции на обоих складах.</li>
-            <li><b>Внедрил бизнес-аналитику на Metabase в масштабах компании</b>, опираясь на опыт работы с аналитикой данных в Statsbot; дал каждому отделу self-serve дашборды поверх операционных данных.</li>
-            <li>Сделал интерфейсы под каждую роль: водители, логисты, повара, упаковщики, сборщики; интегрировал WMS с промышленными кассами и весами по сети (бинарный протокол — open-source-драйвер на Go: <a href="https://github.com/alexesDev/cas">cas</a>).</li>
-            <li>Поднял клиентские витрины (Gatsby / React) и мобильные приложения на React Native; бэкенд на Go + <a href="https://gqlgen.com/">gqlgen</a> (GraphQL).</li>
-            <li>Управлял кластером 30+ виртуалок на Yandex Cloud (Nomad / Consul, провижн через Packer / Ansible), мониторинг — Prometheus / Grafana / AlertManager, self-hosted GitLab CI/CD.</li>
-            <li>Владел полным циклом PoC → продакшен по каждой подсистеме, часто превращая размытые бизнес-запросы напрямую в работающий тулинг.</li>
-          </ul>
-          <p>Стек и инструменты: Go, gqlgen, GraphQL, React, Gatsby, React Native, TypeScript, PostgreSQL, PostgREST, Postgraphile, Metabase, Nomad, Yandex Cloud, Ansible, Packer, Docker, Prometheus, Grafana, GitLab, Redis.</p>
-        </div>
-
-        <div class="job">
-          <h4>Fullstack-разработчик — Statsbot.co</h4>
-          <p>12/2017 — 04/2018 | Москва</p>
-          <p>Короткий целенаправленный заход в SaaS-стартап аналитики данных (кодовая база впоследствии стала опенсорсом <b>Cube.js</b>) между двумя ФРЭШ-тенурами.</p>
-          <ul>
-            <li>Делал фичи на Ruby on Rails / React в быстрорастущей ранней команде.</li>
-            <li><b>Первое глубокое погружение в бизнес-аналитику и OLAP-воркфлоу</b> — напрямую привело к проектированию и внедрению BI-платформы во ФРЭШ после возвращения.</li>
-          </ul>
-          <p>Стек и инструменты: Ruby, Ruby on Rails, React, Redux, Webpack, Docker.</p>
-        </div>
-
-        <div class="job">
-          <h4>Fullstack-разработчик — ФРЭШ</h4>
-          <p>01/2014 — 12/2017 | Москва</p>
-          <p>Та же компания, что и более поздняя роль Head of IT — пришёл единственным разработчиком и вырос вместе с бизнесом.</p>
-          <ul>
-            <li>Подхватил и привёл в рабочее состояние e-commerce-платформу (Rails / React) после предыдущего разработчика; сделал мобильный сайт с SSR.</li>
-            <li>Нашёл и закрыл одной строкой perf-баг в <a href="https://github.com/activeadmin/arbre/pull/40">Arbre</a> — ядре шаблонизации <a href="https://github.com/activeadmin/activeadmin">ActiveAdmin</a> (~10k звёзд; rails-админ-фреймворк, на котором работал бэкенд ФРЭШ). Ускорение рендера в 8 раз на затронутом пути. Нашёл, поддерживая ~100 контроллеров админки. PR смержен в upstream.</li>
-            <li>Поддерживал нативное iOS-приложение (Objective-C) и переписал его на React Native.</li>
-          </ul>
-          <p>Стек и инструменты: Ruby, Ruby on Rails, React, SSR, React Native, Redux, Webpack, PostgreSQL, Redis, Sidekiq.</p>
-        </div>
-
-        <div class="job">
-          <h4>Веб-разработчик на фрилансе</h4>
-          <p>2011 — 2014 | Севастополь</p>
-          <ul>
-            <li>Делал сайты и веб-приложения для SMB на PHP / Yii и Ruby on Rails; вёрстка HTML / CSS / jQuery; PostgreSQL и MongoDB.</li>
-          </ul>
-          <p>Стек и инструменты: PHP, Yii, Ruby, Ruby on Rails, HTML, CSS, jQuery, PostgreSQL, MongoDB.</p>
-        </div>
-      </section>
-    </div>
-    <div class="side-info">
-      <div>
-        <section>
-          <h3>Навыки</h3>
-          <ul>
-            <li><b>AI / LLM:</b> OpenAI API, Model Context Protocol (MCP), AI-агенты, vector indexing, RAG, prompt engineering, agent orchestration, fine-tuning</li>
-            <li><b>Языки:</b> Go (Golang)*, TypeScript, Ruby*</li>
-            <li><b>Backend и данные:</b> REST, GraphQL, gRPC / Protobuf, BigQuery, PostgreSQL*, SQLite, Redis</li>
-            <li><b>Cloud и инфра:</b> Docker*, Kubernetes, Google Cloud, S3, Nomad / Consul, Ansible, Packer</li>
-            <li><b>Frontend:</b> React*, Next.js, Gatsby, React Native*, Tailwind</li>
-          </ul>
-          <p class="hint">* — Уверенное владение, 5+ лет коммерческого опыта</p>
-        </section>
-
-        <section>
-          <h3>Языки</h3>
-          <ul>
-            <li>Русский — родной</li>
-            <li>Украинский — родной</li>
-            <li>English — B2+</li>
-          </ul>
-        </section>
-      </div>
-
-      <section>
-        <h3>Хобби</h3>
-        <dl>
-          <dt>Zettelkasten / Второй мозг</dt>
-          <dd>3+ года веду личный Obsidian-граф. Напрямую породил <a href="https://trip2g.com">trip2g.com</a>.</dd>
-        </dl>
-
-        <dl>
-          <dt>Электроника</dt>
-          <dd>Проектирую, заказываю и собираю несложные устройства на популярных микроконтроллерах. Полезные навыки: C++.</dd>
-        </dl>
-
-        <dl>
-          <dt>3D-печать</dt>
-          <dd>Проектирую детали/устройства в CAD и печатаю их. Полезные навыки: владение CAD, опыт с ЧПУ.</dd>
-        </dl>
-
-        <dl>
-          <dt>Гидропоника</dt>
-          <dd>Выращивание растений без почвы с автоматизацией. Полезные навыки: мониторинг питания и среды на Prometheus / Grafana.</dd>
-        </dl>
-
-        <dl>
-          <dt>GameDev</dt>
-          <dd>Unity, Godot, VR. Полезные навыки: C#, C++.</dd>
-        </dl>
-      </section>
-    </div>
-  </div>
-</div>
+</section>
+<section class="closing" aria-labelledby="languages">
+<h2 id="languages">Языки и открытые проекты</h2>
+<p>Английский — B2+ · Русский и украинский — родные.</p>
+<p>Другие работы: <a href="https://github.com/alexesdev">github.com/alexesdev</a> · <a href="https://github.com/alexesDev/cas">Go driver for CAS scales</a></p>
+</section>
+</main>
+</body>
+</html>
