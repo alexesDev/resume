@@ -4,9 +4,9 @@ Maintained HTML/CSS resumes, published on GitHub Pages:
 
 | Audience | HTML | PDF |
 | --- | --- | --- |
-| Backend / platform, English | [en.html](en.html) | [en.pdf](en.pdf) |
-| AI application / infrastructure, English | [en-ai.html](en-ai.html) | [en-ai.pdf](en-ai.pdf) |
-| Backend / platform, Russian | [index.html](index.html) | [ru.pdf](ru.pdf) |
+| CTO / founding engineer, English | [en.html](en.html) | [en.pdf](en.pdf) |
+| AI agent infrastructure, English | [en-ai.html](en-ai.html) | [en-ai.pdf](en-ai.pdf) |
+| CTO / founding engineer, Russian | [index.html](index.html) | [ru.pdf](ru.pdf) |
 
 Edit the relevant HTML files directly and keep shared career facts consistent.
 All versions use `styles.css`, system fonts, and a single-column layout. Print

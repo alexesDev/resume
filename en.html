@@ -3,51 +3,63 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Alexey Yurchenko — Senior Backend Engineer — Go / Python</title>
-<meta name="description" content="I build backends, data pipelines, and business systems, with 15 years in software development. At P2P.org, I wrote Go/Python pipelines that processed terabytes of blockchain data. At FRESH, I led a team of 10 building software for two warehouses and approximately 1,000 daily orders. My current work is an open-source knowledge platform and AI agent infrastructure.">
-<meta property="og:title" content="Alexey Yurchenko — Senior Backend Engineer — Go / Python">
-<meta property="og:description" content="Go, Python, production systems, data pipelines, AI infrastructure. Vietnam · UTC+6 working time zone.">
+<title>Alexey Yurchenko — CTO / Founding Engineer — Go, Platform, AI Agents</title>
+<meta name="description" content="15 years in software, four of them as a CTO. I returned to FRESH as CTO to lead its merger with two acquired companies; my team of 10 cost $8k a month and did the work the acquired company’s team had done for $20k. Now I am building Fleetbox, a self-hosted platform for fleets of AI agents: I own the architecture and acceptance, and a team of AI coding agents implements it. My strength is not writing code: assembling a product from proven open-source parts, keeping the core small, and verifying it into production.">
+<meta property="og:title" content="Alexey Yurchenko — CTO / Founding Engineer — Go, Platform, AI Agents">
+<meta property="og:description" content="Go, platforms, AI agents, engineering leadership. Vietnam · UTC+6 working time zone.">
 <meta property="og:url" content="https://alexesdev.github.io/resume/en.html">
 <meta property="og:type" content="website">
 <link rel="stylesheet" href="styles.css?v=3">
 </head>
 <body>
 <main class="resume">
-<nav aria-label="Resume version"><a href="index.html">RU · Backend</a><a href="en.html" aria-current="page">EN · Backend</a><a href="en-ai.html">EN · AI</a><a href="en.pdf">PDF ↓</a></nav>
+<nav aria-label="Resume version"><a href="index.html">RU · CTO</a><a href="en.html" aria-current="page">EN · CTO</a><a href="en-ai.html">EN · AI</a><a href="en.pdf">PDF ↓</a></nav>
 <header>
 <h1>Alexey Yurchenko</h1>
-<p class="headline">Senior Backend Engineer — Go / Python</p>
+<p class="headline">CTO / Founding Engineer — Go, Platform, AI Agents</p>
 <p class="contact"><a href="mailto:alexes.dev@gmail.com">alexes.dev@gmail.com</a> · <a href="https://github.com/alexesdev">github.com/alexesdev</a></p>
 <p class="location">Based in Vietnam · Working time zone: UTC+6</p>
-<p class="availability">Remote · Open to full-time and contract roles</p>
+<p class="availability">Remote · Full-time or contract · A role accountable for architecture and outcomes, not lines of code</p>
 </header>
 <section aria-labelledby="summary">
 <h2 id="summary">Profile</h2>
-<p>I build backends, data pipelines, and business systems, with 15 years in software development. At P2P.org, I wrote Go/Python pipelines that processed terabytes of blockchain data. At FRESH, I led a team of 10 building software for two warehouses and approximately 1,000 daily orders. My current work is an open-source knowledge platform and AI agent infrastructure.</p>
+<p>15 years in software, four of them as a CTO. I returned to FRESH as CTO to lead its merger with two acquired companies; my team of 10 cost $8k a month and did the work the acquired company’s team had done for $20k. Now I am building Fleetbox, a self-hosted platform for fleets of AI agents: I own the architecture and acceptance, and a team of AI coding agents implements it. My strength is not writing code: assembling a product from proven open-source parts, keeping the core small, and verifying it into production.</p>
 </section>
 <section class="skills" aria-labelledby="skills">
 <h2 id="skills">Technical skills</h2>
-<p><strong>Backend:</strong> Go, Python, TypeScript, Ruby; REST, GraphQL, gRPC / Protobuf.</p>
-<p><strong>Data:</strong> PostgreSQL, SQLite, BigQuery, Redis.</p>
-<p><strong>Infrastructure:</strong> Docker, Kubernetes, Google Cloud, S3, Nomad / Consul, CI/CD, Prometheus / Grafana.</p>
-<p><strong>Frontend:</strong> React, React Native.</p>
+<p><strong>Leadership:</strong> CTO, technical integration in a merger, business analysis, hiring and mentoring, directing AI coding agents.</p>
+<p><strong>Backend &amp; data:</strong> Go, Python, TypeScript, Ruby; REST, GraphQL, gRPC; PostgreSQL, SQLite, ClickHouse, BigQuery, Redis.</p>
+<p><strong>Infrastructure:</strong> Nomad / Consul / Vault, Ansible, Docker, Kubernetes, gVisor, Traefik, OIDC, Google Cloud, S3, Prometheus / Loki / Grafana.</p>
+<p><strong>Frontend:</strong> React, React Native, $mol.</p>
 </section>
 <section aria-labelledby="experience">
 <h2 id="experience">Experience</h2>
 <article class="job">
-<h3>Independent Software Engineer — trip2g &amp; AI infrastructure</h3>
-<p class="meta">2025 – Present · Remote</p>
-<p>Built <a href="https://trip2g.com">trip2g</a>, an open-source knowledge platform (MIT), from prototype to a public service used by external users.</p>
+<h3>Founder &amp; CTO — Fleetbox</h3>
+<p class="meta">Jul 2026 – Present · Remote</p>
+<p>Building <a href="https://fleetbox.cc">Fleetbox</a>, a self-hosted platform where a business runs a fleet of LLM agents, each in its own isolated pod with Telegram, a knowledge base, a browser, and integrations. Second build: the first, three months of vibe coding, fell apart; I rebuilt it core-first in cycles of one week building, two weeks testing.</p>
 <ul>
-<li>Designed a Go backend for markdown publishing, knowledge graphs, and retrieval through Model Context Protocol (MCP); added search across federated knowledge bases.</li>
-<li>Built a hosting control panel on Nomad with pre-provisioned container slots for new instances; used SQLite with Litestream replication to S3 for persistent storage.</li>
-<li>Built agent deployment and memory infrastructure: dedicated knowledge bases, shared context, and a web interface for inspecting stored knowledge.</li>
-<li>Developed <a href="https://iiminion.ru">AI workflows</a> for competitor research, content drafting, video generation, and landing-page creation.</li>
+<li>The core is the open-source Hermes agent, caged in an isolated pod: the platform is a harness over its harness, not an agent of my own.</li>
+<li>Designed the whole platform: a Go / GraphQL control panel, Nomad / Consul orchestration, secrets in Vault via Workload Identity, Ansible, gVisor isolation, backups with tested restores, Prometheus / Loki / Grafana.</li>
+<li>The code is written entirely by AI coding agents; I review the critical paths by hand. Engineering rules are checkable invariants, architecture decisions stay with me, acceptance is independent verification and five gates before production. 600+ pull requests in two months; running in production and at customer (BYOC) sites.</li>
+<li>Set the security model of two independent walls on every path to a secret: the panel writes secrets to Vault but cannot read any, and refuses to start if Vault would let it.</li>
 </ul>
-<p class="stack">Go · TypeScript · SQLite · Litestream · S3 · Nomad · MCP · RAG</p>
+<p class="stack">Go · GraphQL · Nomad · Consul · Vault · Ansible · gVisor · Traefik · OIDC · Prometheus · LLM agents</p>
 </article>
 <article class="job">
-<h3>Backend Engineer, Tool Team — P2P.org</h3>
+<h3>Independent Engineer — trip2g</h3>
+<p class="meta">2025 – Present · Remote</p>
+<p><a href="https://trip2g.com">trip2g</a> is an open-source knowledge platform (MIT) with external users; in Fleetbox it is agent memory. The last project where I wrote the code by hand. The lesson: an engineering instinct left unchecked builds a Swiss army knife — trip2g grew into a markdown framework that only an agent can use to the full. That is why Fleetbox was built core-first.</p>
+<ul>
+<li>Go backend for markdown publishing, knowledge graphs, and retrieval over MCP and across federated bases; <a href="https://iiminion.ru">agent workflows</a> for content, video, and landing pages.</li>
+</ul>
+<p class="stack">Go · TypeScript · SQLite · Litestream · S3 · MCP · RAG</p>
+</article>
+</section>
+<section class="page-two" aria-labelledby="earlier-experience">
+<h2 id="earlier-experience">Earlier experience</h2>
+<article class="job">
+<h3>Data / Backend Engineer, Tool Team — P2P.org</h3>
 <p class="meta">Aug 2022 – Jan 2024 · Remote</p>
 <p>Built data infrastructure for Proof-of-Stake blockchain networks.</p>
 <ul>
@@ -58,20 +70,16 @@
 </ul>
 <p class="stack">Python · Go · BigQuery · gRPC · Protobuf · Google Cloud · Kubernetes · Cosmos SDK</p>
 </article>
-
-</section>
-<section class="page-two" aria-labelledby="earlier-experience">
-<h2 id="earlier-experience">Earlier experience</h2>
 <article class="job">
-<h3>Head of IT / Hands-on Engineering Lead — FRESH</h3>
+<h3>CTO — FRESH (myfresh.ru)</h3>
 <p class="meta">Jul 2018 – Apr 2022 · Moscow</p>
-<p>Responsible for software development and infrastructure at an e-commerce business with two warehouses and approximately 1,000 orders per day.</p>
+<p>Returned to the company as CTO to lead its merger with the acquired moscowfresh.ru and familyfriend.com. Grocery delivery with 300 employees, two warehouses, and approximately 1,000 orders per day.</p>
 <ul>
-<li>Managed a cross-functional team of 10 across backend, frontend, mobile, design, and product; led hiring, mentoring, and technical direction.</li>
-<li>Led technical integration of acquired businesses, consolidating their applications, data, and operational workflows.</li>
-<li>Designed and built a warehouse management system covering inventory, supplies, and shipments; integrated role-specific tools with industrial scales and cash registers.</li>
-<li>Built Go / GraphQL services, React storefronts, and React Native applications; introduced company-wide Metabase dashboards for operational reporting.</li>
-<li>Operated 30+ virtual machines using Nomad / Consul, automated provisioning, GitLab CI/CD, and Prometheus / Grafana monitoring.</li>
+<li>Key result: my team of 10 cost $8k a month and did the work the acquired company’s team had done for $20k.</li>
+<li>Consolidated the applications, data, and operational workflows of three companies into one system.</li>
+<li>Also acted as the business analyst: processes were captured directly in code rather than in written procedures. The warehouse system — inventory, supplies, shipments, industrial scales and cash registers — became the description of how the company worked.</li>
+<li>Led a cross-functional team across backend, frontend, mobile, design, and product; hiring, mentoring, and technical direction.</li>
+<li>Go / GraphQL services, React storefronts, React Native apps, and Metabase for department reporting; 30+ VMs on Nomad / Consul with GitLab CI/CD and Prometheus / Grafana monitoring.</li>
 </ul>
 <p class="stack">Go · GraphQL / gqlgen · PostgreSQL · React · React Native · Nomad · Ansible · Metabase</p>
 </article>
@@ -83,7 +91,7 @@
 </ul>
 </article>
 <article class="job">
-<h3>Full-stack Engineer — FRESH</h3>
+<h3>Full-stack Engineer — FRESH (myfresh.ru)</h3>
 <p class="meta">Jan 2014 – Dec 2017 · Moscow</p>
 <ul>
 <li>Joined as the sole engineer; maintained and extended the Rails / React commerce platform and mobile web experience.</li>
@@ -98,10 +106,9 @@
 <li>Delivered websites and web applications for small businesses using PHP / Yii, Ruby on Rails, JavaScript, and relational databases.</li>
 </ul>
 </article>
-
 </section>
 <section class="closing" aria-labelledby="languages">
-<h2 id="languages">Languages & open source</h2>
+<h2 id="languages">Languages &amp; open source</h2>
 <p>English — B2+ · Russian and Ukrainian — native.</p>
 <p>More work: <a href="https://github.com/alexesdev">github.com/alexesdev</a> · <a href="https://github.com/alexesDev/cas">Go driver for CAS scales</a></p>
 </section>
